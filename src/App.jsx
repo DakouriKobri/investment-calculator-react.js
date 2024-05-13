@@ -1,4 +1,38 @@
+// Project Imports
+import { formatter } from './util/investment';
+
+const annualData = [
+  {
+    year: 1,
+    investmentValue: 10_850,
+    interest: 550,
+    totalInterest: 550,
+    investedCapital: 10_300,
+  },
+  {
+    year: 2,
+    investmentValue: 11_747,
+    interest: 597,
+    totalInterest: 1_147,
+    investedCapital: 10_600,
+  },
+];
+
 function App() {
+  const annualResult = annualData.map((data) => {
+    const { investedCapital, investmentValue, totalInterest, year, interest } =
+      data;
+
+    return (
+      <tr key={year}>
+        <td>{year}</td>
+        <td>{formatter.format(investmentValue)}</td>
+        <td>{formatter.format(interest)}</td>
+        <td>{formatter.format(totalInterest)}</td>
+        <td>{formatter.format(investedCapital)}</td>
+      </tr>
+    );
+  });
   return (
     <main>
       <div id="user-input">
@@ -38,22 +72,7 @@ function App() {
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>$10,850</td>
-            <td>$550</td>
-            <td>$550</td>
-            <td>$10,300</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>$11,747</td>
-            <td>$597</td>
-            <td>$1,147</td>
-            <td>$10,600</td>
-          </tr>
-        </tbody>
+        <tbody>{annualResult}</tbody>
       </table>
     </main>
   );

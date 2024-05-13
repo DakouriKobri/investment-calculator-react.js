@@ -1,4 +1,5 @@
 // Project Imports
+import UserInput from './components/UserInput';
 import { formatter } from './util/investment';
 
 const annualData = [
@@ -33,33 +34,10 @@ function App() {
       </tr>
     );
   });
+
   return (
     <main>
-      <div id="user-input">
-        <div className="input-group">
-          <p>
-            <label htmlFor="investment">Initial Investment</label>
-            <input type="text" placeholder="10000" />
-          </p>
-
-          <p>
-            <label htmlFor="investment">Annual Investment</label>
-            <input type="text" placeholder="300" />
-          </p>
-        </div>
-
-        <div className="input-group">
-          <p>
-            <label htmlFor="investment">Expected Return</label>
-            <input type="text" placeholder="5,5" />
-          </p>
-
-          <p>
-            <label htmlFor="investment">Duration</label>
-            <input type="text" placeholder="12" />
-          </p>
-        </div>
-      </div>
+      <UserInput />
 
       <table id="result">
         <thead>

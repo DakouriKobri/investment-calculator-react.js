@@ -1,25 +1,4 @@
-// NPM Packages
-import { useState } from 'react';
-
-export default function UserInput() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 12000,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, newValue) {
-    const updatedUserInput = (currentInput) => {
-      return {
-        ...currentInput,
-        [inputIdentifier]: newValue,
-      };
-    };
-
-    setUserInput(updatedUserInput);
-  }
-
+export default function UserInput({ userInput, onHandleChange }) {
   return (
     <section id="user-input">
       <div className="input-group">
@@ -32,7 +11,7 @@ export default function UserInput() {
             placeholder="10000"
             value={userInput.initialInvestment}
             onChange={(event) =>
-              handleChange('initialInvestment', event.target.value)
+              onHandleChange('initialInvestment', event.target.value)
             }
           />
         </p>
@@ -46,7 +25,7 @@ export default function UserInput() {
             placeholder="300"
             value={userInput.annualInvestment}
             onChange={(event) =>
-              handleChange('annualInvestment', event.target.value)
+              onHandleChange('annualInvestment', event.target.value)
             }
           />
         </p>
@@ -62,7 +41,7 @@ export default function UserInput() {
             placeholder="5,5"
             value={userInput.expectedReturn}
             onChange={(event) =>
-              handleChange('expectedReturn', event.target.value)
+              onHandleChange('expectedReturn', event.target.value)
             }
           />
         </p>
@@ -75,7 +54,7 @@ export default function UserInput() {
             aria-required
             placeholder="12"
             value={userInput.duration}
-            onChange={(event) => handleChange('duration', event.target.value)}
+            onChange={(event) => onHandleChange('duration', event.target.value)}
           />
         </p>
       </div>

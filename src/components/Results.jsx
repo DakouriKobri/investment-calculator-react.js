@@ -14,14 +14,16 @@ const annualData = [
     investmentValue: 11_747,
     interest: 597,
     totalInterest: 1_147,
-    investedCapital: 10_600,
+    investedCapital: 10_609,
   },
 ];
 
-export default function Results() {
+export default function Results({ userInput }) {
   const annualResult = annualData.map((data) => {
     const { investedCapital, investmentValue, totalInterest, year, interest } =
       data;
+
+    console.log('userInput:', userInput);
 
     return (
       <tr key={year}>

@@ -5,10 +5,33 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/investment-calculator-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    #header {
+      text-align: center;
+      margin: 3rem auto;
+    }
+
+
+    #header img {
+      width: 5rem;
+      height: 5rem;
+      object-fit: contain;
+      background-color: transparent;
+    }
+
+    #header h1 {
+      font-size: 1.5rem;
+    }
+  </style>
   <title>Investment Calculator | React & Vite</title>
 </head>
 
 <body>
+  <header id="header">
+    <h1>Investment Calculator</h1>
+    <img src="investment-calculator-logo.png"
+      alt="Abstract image of dollar symbol on a money bag next to a pile of coins and investment chart">
+  </header>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

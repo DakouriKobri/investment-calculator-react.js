@@ -1,62 +1,41 @@
+// Project Imports
+import Input from './Input';
+
 export default function UserInput({ userInput, onHandleChange }) {
   return (
     <section id="user-input">
       <div className="input-group">
-        <p>
-          <label htmlFor="investment">Initial Investment</label>
-          <input
-            type="number"
-            required
-            aria-required
-            placeholder="10000"
-            value={userInput.initialInvestment}
-            onChange={(event) =>
-              onHandleChange('initialInvestment', event.target.value)
-            }
-          />
-        </p>
-
-        <p>
-          <label htmlFor="investment">Annual Investment</label>
-          <input
-            type="number"
-            required
-            aria-required
-            placeholder="300"
-            value={userInput.annualInvestment}
-            onChange={(event) =>
-              onHandleChange('annualInvestment', event.target.value)
-            }
-          />
-        </p>
+        <Input
+          label="Initial Investment"
+          value={userInput.initialInvestment}
+          changeHandler={(event) =>
+            onHandleChange('initialInvestment', event.target.value)
+          }
+        />
+        <Input
+          label="Annual Investment"
+          value={userInput.annualInvestment}
+          changeHandler={(event) =>
+            onHandleChange('annualInvestment', event.target.value)
+          }
+        />
       </div>
 
       <div className="input-group">
-        <p>
-          <label htmlFor="investment">Expected Return</label>
-          <input
-            type="number"
-            required
-            aria-required
-            placeholder="5,5"
-            value={userInput.expectedReturn}
-            onChange={(event) =>
-              onHandleChange('expectedReturn', event.target.value)
-            }
-          />
-        </p>
-
-        <p>
-          <label htmlFor="investment">Duration</label>
-          <input
-            type="number"
-            required
-            aria-required
-            placeholder="12"
-            value={userInput.duration}
-            onChange={(event) => onHandleChange('duration', event.target.value)}
-          />
-        </p>
+        <Input
+          label="Expected Return"
+          value={userInput.expectedReturn}
+          changeHandler={(event) =>
+            onHandleChange('expectedReturn', event.target.value)
+          }
+        />
+        <Input
+          label="Duration"
+          value={userInput.duration}
+          changeHandler={(event) =>
+            onHandleChange('duration', event.target.value)
+          }
+        />
       </div>
     </section>
   );

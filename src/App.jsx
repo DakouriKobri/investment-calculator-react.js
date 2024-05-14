@@ -17,7 +17,7 @@ function App() {
     const updatedUserInput = (currentInput) => {
       return {
         ...currentInput,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     };
 

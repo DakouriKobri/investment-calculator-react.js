@@ -1,5 +1,5 @@
 // Project Imports
-import { formatter } from '../util/investment';
+import { calculateInvestmentResults, formatter } from '../util/investment';
 
 const annualData = [
   {
@@ -19,11 +19,13 @@ const annualData = [
 ];
 
 export default function Results({ userInput }) {
+  const resultsData = calculateInvestmentResults(userInput);
+
+  console.log('resultsData:', resultsData);
+
   const annualResult = annualData.map((data) => {
     const { investedCapital, investmentValue, totalInterest, year, interest } =
       data;
-
-    console.log('userInput:', userInput);
 
     return (
       <tr key={year}>
